@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg_dark: #1a1c1e;
+  --bg_dark-grey: #212325;
+  --ms_text-muted: #9fa5b5;
+  --bg_pink: #ad84f9;
+  --bg_light-blue: #5091f7;
+  --ghost_white: #f8f8ff;
+}
+
+body {
+  overflow: hidden;
+}
+
+.bg_dark {
+  background-color: var(--bg_dark);
+}
+
+.bg_transparent {
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(3.1px);
+}
+
+.bg_dark-grey {
+  background-color: var(--bg_dark-grey);
+}
+
+.ms_text-white {
+  color: var(--ghost_white);
+}
+
+.bg_gradient {
+  background: linear-gradient(
+    61deg,
+    rgba(173, 132, 249, 1) 30%,
+    rgba(123, 139, 248, 1) 55%,
+    rgba(80, 145, 247, 1) 76%
+  );
+}
+
+.layover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.ms_err-msg {
+  font-size: 78px;
+  font-weight: 900;
+}

@@ -1,0 +1,8 @@
+.arrow-icon {
+  position: absolute;
+  max-width: 32px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}

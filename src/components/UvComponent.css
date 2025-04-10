@@ -1,0 +1,17 @@
+.uv-bar {
+  background: linear-gradient(
+    to right,
+    green 0,
+    yellow 30%,
+    orange 60%,
+    red 90%,
+    #7f00ff 100%
+  );
+}
+
+.indicator {
+  position: absolute;
+  top: -50%;
+  translate: 0 -20%;
+  background-color: #f8f8ff;
+}
