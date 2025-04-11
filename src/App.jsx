@@ -27,6 +27,7 @@ function App() {
   ]);
 
   useEffect(() => {
+    //console.log(query);
     if (query !== "") {
       getCurrentWeather(query);
     } else {
@@ -35,10 +36,21 @@ function App() {
   }, [initialQuery, query]);
 
   useEffect(() => {
+    //console.log(isCurrentReady);
     if (isCurrentReady) {
-      getForecast(initialQuery, forecastDays);
+      //console.log(query);
+      if (query !== "") {
+        getForecast(query, forecastDays);
+      } else {
+        getForecast(initialQuery, forecastDays);
+      }
     }
   }, [isCurrentReady]);
+
+  /*  useEffect(() => {
+    console.log(query);
+    console.log(currentWeather, forecastWeather);
+  }, [currentWeather]); */
 
   //handle the App state from child component Searchbar
 
