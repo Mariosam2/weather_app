@@ -11,9 +11,8 @@ const Searchbar = ({ sendQueryToApp, setLoaders, setError }) => {
   const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
   useEffect(() => {
     //console.log(query);
-
+    sendQueryToApp(query);
     if (query !== "") {
-      sendQueryToApp(query);
       getAutocompleteCities(query);
     }
   }, [query]);

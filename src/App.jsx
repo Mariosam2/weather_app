@@ -47,11 +47,6 @@ function App() {
     }
   }, [isCurrentReady]);
 
-  /*  useEffect(() => {
-    console.log(query);
-    console.log(currentWeather, forecastWeather);
-  }, [currentWeather]); */
-
   //handle the App state from child component Searchbar
 
   const handleQuery = (query) => {
