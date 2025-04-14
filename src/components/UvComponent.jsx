@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./UvComponent.css";
 import { SunIcon } from "@heroicons/react/24/solid";
+import ForecastComponent from "./ForecastComponent";
 const UvComponent = (props) => {
   const [percentage, setPercentage] = useState(0);
   useEffect(() => {
@@ -17,20 +18,26 @@ const UvComponent = (props) => {
     }
   };
   return (
-    <div className="col-span-1 rounded-[1rem] bg_dark-grey aspect-square p-4">
-      <div className="flex">
-        <SunIcon className="size-6 ms_text-white me-1 self-center" />
-        <h4 className="font-light">UV Index</h4>
+    <div className=" flex gap-x-2 xs:col-span-1   ">
+      <div className="uv-container p-4 bg_dark-grey rounded-[1rem] flex-grow h-max ">
+        <div className="flex">
+          <SunIcon className="block xxs:hidden xs:block size-6 ms_text-white me-1 self-center" />
+          <h4 className="font-light">UV Index</h4>
+        </div>
+        <span className="text-3xl xs:text-4xl font-bold inline-block pt-1 xs:pt-3">
+          {props.uvIndex}
+        </span>
+        <div className="uv-bar h-[4px] rounded-full  mt-4 relative">
+          <div
+            style={{ left: percentage + "%" }}
+            className="indicator h-[12px] w-[4px] rounded"
+          ></div>
+        </div>
       </div>
-      <span className="text-4xl font-bold inline-block pt-3">
-        {props.uvIndex}
-      </span>
-      <div className="uv-bar h-[4px] rounded-full  mt-4 relative">
-        <div
-          style={{ left: percentage + "%" }}
-          className="indicator h-[12px] w-[4px] rounded"
-        ></div>
-      </div>
+      <ForecastComponent
+        isMobile={true}
+        forecastWeather={props.forecastWeather}
+      />
     </div>
   );
 };

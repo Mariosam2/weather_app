@@ -11,9 +11,9 @@
   --ghost_white: #f8f8ff;
 }
 
-body {
+/* body {
   overflow: hidden;
-}
+} */
 
 .bg_dark {
   background-color: var(--bg_dark);
@@ -54,3 +54,18 @@ body {
   font-size: 78px;
   font-weight: 900;
 }
+
+/* Searchbar */
+.autocomplete {
+  top: 100%;
+  right: 0;
+  z-index: 999999;
+}
+
+/* Mobile Layout */
+
+/* @media screen and (max-width: 540px) {
+  .ms_card {
+    max-width: 20rem;
+  }
+} */

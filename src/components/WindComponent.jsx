@@ -13,7 +13,7 @@ const WindComponent = (props) => {
     }
   }, [props]);
   return (
-    <div className="col-span-2 rounded-[1rem] bg_dark-grey  p-4">
+    <div className="xs:col-span-2 rounded-[1rem] bg_dark-grey  p-4">
       <div className="flex">
         <svg
           className="self-center me-1"
@@ -39,7 +39,7 @@ const WindComponent = (props) => {
       </div>
       <div className="grid grid-cols-1 p-1">
         <div className="degrees text-white relative">
-          <img src={Compass} alt="" />
+          <img className="max-w-full" src={Compass} alt="" />
           <img
             style={{ rotate: windDegree + "deg" }}
             className="arrow-icon"

@@ -23,7 +23,7 @@ const Card = (props) => {
   };
   return (
     <>
-      <div className="ms_card bg_transparent relative flex max-w-[30rem] flex-col rounded-[1.5rem] bg-clip-border ms_text-white shadow-md mx-auto mt-6">
+      <div className="ms_card bg_transparent relative flex max-w-[17rem] xxs:max-w-[22rem] xs:max-w-[30rem]  flex-col rounded-[1.5rem] bg-clip-border ms_text-white shadow-md mx-auto mt-6">
         <div className="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border shadow-none">
           <h1 className="text-4xl font-semibold p-4 pb-2 mx-auto w-fit">
             {currentWeather ? currentWeather.city : ""}
@@ -47,10 +47,10 @@ const Card = (props) => {
         </div>
         <div className="bg_dark p-2 rounded-[1.5rem]">
           <div className="grid grid-cols-3 gap-x-2">
-            <div className="col-span-1 rounded-[1rem] bg_dark-grey aspect-square p-4">
+            <div className="col-span-1 rounded-[1rem] bg_dark-grey aspect-square p-2 xxs:p-4">
               <div className="flex ">
                 <svg
-                  className="self-center me-1"
+                  className="self-center me-1 hidden xs:block"
                   fill="none"
                   height="16"
                   viewBox="0 0 24 24"
@@ -68,16 +68,16 @@ const Card = (props) => {
                     <path d="m14.1296 11.5308c.7603-.2461 1.3432.5452.9857 1.2584-.1633.3259-.347.6032-.7122.7322-.9771.3452-1.7865.8313-2.6316 1.3465l-.0841.0513c-1.083.6607-2.28224 1.3923-3.86666 1.6557-1.64339.2732-3.5847.0317-6.1919-1.0088-.51276-.2046-.762152-.7852-.55703-1.2967.20513-.5116.78709-.7604 1.29986-.5557 2.39269.9548 3.9513 1.0875 5.12034.8932 1.18688-.1973 2.09173-.7435 3.23659-1.4415 1.088-.6633 2.2077-1.2483 3.401-1.6346z" />
                   </g>
                 </svg>
-                <h4 className="font-light">Humidity</h4>
+                <h4 className="font-light flex-grow">Humidity</h4>
               </div>
-              <span className="text-4xl font-bold inline-block pt-3">
+              <span className="text-md xxs:text-xl xs:text-4xl font-bold inline-block pt-3">
                 {currentWeather ? currentWeather.humidity : ""}%
               </span>
             </div>
-            <div className="col-span-1 rounded-[1rem] bg_dark-grey aspect-square p-4">
+            <div className="col-span-1 rounded-[1rem] bg_dark-grey aspect-square p-2 xxs:p-4">
               <div className="flex">
                 <svg
-                  className="self-center "
+                  className="self-center hidden xs:block"
                   height="24"
                   viewBox="0 0 56 56"
                   width="24"
@@ -88,15 +88,15 @@ const Card = (props) => {
                 </svg>
                 <h4 className="font-light">Perceived</h4>
               </div>
-              <span className="text-4xl font-bold inline-block pt-3">
+              <span className="text-md xxs:text-xl xs:text-4xl font-bold inline-block pt-3">
                 {currentWeather ? currentWeather.feelslike_temp : ""}
                 &deg;
               </span>
             </div>
-            <div className="col-span-1 rounded-[1rem] bg_dark-grey aspect-square p-4">
+            <div className="col-span-1 rounded-[1rem] bg_dark-grey aspect-square p-2 xxs:p-4">
               <div className="flex">
                 <svg
-                  className="self-center me-1"
+                  className="self-center me-1 hidden xs:block"
                   height="18"
                   width="18"
                   version="1.1"
@@ -121,20 +121,24 @@ const Card = (props) => {
                 </svg>
                 <h4 className="font-light">Pressure</h4>
               </div>
-              <span className="text-4xl font-bold inline-block pt-3">
+              <span className="text-md xxs:text-xl xs:text-4xl font-bold inline-block pt-3">
                 {currentWeather ? currentWeather.pressure : ""}
                 <span className="text-base ps-0.5">mb</span>
               </span>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-x-2 mt-4">
+          <div className="flex flex-col  gap-y-4  xs:grid xs:grid-cols-3  xs:grid-rows-1 xs:gap-x-2 xs:gap-y-0 mt-4">
             <WindComponent
               windDegree={currentWeather ? currentWeather.wind_degree : null}
               windSpeed={currentWeather ? currentWeather.wind_speed : null}
             />
-            <UvComponent uvIndex={currentWeather ? currentWeather.uv : null} />
+            <UvComponent
+              forecastWeather={forecastWeather ? forecastWeather : null}
+              uvIndex={currentWeather ? currentWeather.uv : null}
+            />
           </div>
           <ForecastComponent
+            isMobile={false}
             forecastWeather={forecastWeather ? forecastWeather : null}
           />
         </div>

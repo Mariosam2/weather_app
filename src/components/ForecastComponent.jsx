@@ -9,12 +9,18 @@ const ForecastComponent = (props) => {
   }, [props]);
 
   return (
-    <div className="forecast grid grid-cols-2   mt-4">
+    <div
+      className={`forecast ${
+        props.isMobile ? "hidden xxs:grid xs:hidden" : "grid xxs:hidden xs:grid"
+      }  grid-cols-1 grid-rows-2 xs:grid-cols-2 xs:grid-rows-1 mt-4 xxs:mt-0 xs:mt-4`}
+    >
       {forecastWeather
         ? forecastWeather.map((day, index) => {
             return (
               <div
-                className="forecast-content flex items-center bg_dark-grey rounded-[1rem] p-2 m-1"
+                className={`forecast-content  flex items-center bg_dark-grey rounded-[1rem] p-2 ${
+                  index === 1 ? "mt-2" : ""
+                } xxs:m-1`}
                 key={index}
               >
                 <h4 className="py-2 ps-2">{day.dayname}</h4>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./Searchbar.css";
 import lookup from "country-code-lookup";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 const Searchbar = ({ sendQueryToApp, setLoaders, setError }) => {
@@ -123,7 +122,7 @@ const Searchbar = ({ sendQueryToApp, setLoaders, setError }) => {
           <input
             onChange={handleChange}
             onFocus={handleFocus}
-            className="searchbar w-80 p-2 focus:outline-none  border-s border-black rounded-r-[1rem]"
+            className="searchbar w-60 xxs:w-80 p-2 focus:outline-none  border-s border-black rounded-r-[1rem]"
             type="text"
             placeholder="Search.."
             value={query}
