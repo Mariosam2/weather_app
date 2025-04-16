@@ -74,7 +74,7 @@ const Searchbar = ({ sendQueryToApp, setLoaders, setError }) => {
 
   const getAutocompleteCities = async (query) => {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${query}`
+      `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${query}`
     );
     if (response.status === 200) {
       response
