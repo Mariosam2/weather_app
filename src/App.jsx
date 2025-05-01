@@ -77,7 +77,7 @@ function App() {
     //console.log(forecast);
     const forecastWithDays = forecast.map((day, index) => {
       //console.log(day);
-      return (day = { dayname: getNextDay(index), ...day });
+      return (day = { dayname: getNextDay(index + 1), ...day });
     });
     //console.log(forecastWithDays);
 
